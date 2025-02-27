@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <!-- ======================== Font ======================== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- ======================== Tailwind ======================== -->
+  <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+  
+  <title>Intro component with sign up form</title>
+
+  <style type="text/tailwindcss">
+    @theme {
+      --color-red: hsl(0, 100%, 74%);
+      --color-green: hsl(154, 59%, 51%);
+
+      --color-blue: hsl(248, 32%, 49%);
+
+      --color-dark-blue: hsl(249, 10%, 26%);
+      --color-grayish-blue: hsl(246, 25%, 77%);
+    }
+  </style>
+
+</head>
+<body class="font-[Poppins] flex items-center justify-center bg-red bg-[url('/images/bg-intro-mobile.png')] lg:bg-[url('/images/bg-intro-desktop.png')] lg:h-screen lg:items-center">
+
+  <section class="w-[90%] flex flex-col gap-14 my-20 lg:flex-row lg:items-center lg:w-[75%] lg:gap-10 lg:my-0">
+
+    <div class="flex flex-col items-center text-center text-white lg:flex-1 lg:text-left lg:items-start">
+      <h1 class="text-2xl mb-5 font-bold w-2/3 lg:text-5xl lg:w-[90%] lg:leading-13 lg:mb-7">Learn to code by watching others</h1>
+      <p class="w-[95%]">See how experienced developers solve problems in real-time. Watching scripted tutorials is great, 
+        but understanding how developers think is invaluable. </p>
+    </div>
+
+    <div class="flex flex-col gap-6 lg:flex-1">
+      <div class="py-4 bg-blue text-center text-white rounded-lg shadow-[0_8px_0_hsla(249,10%,26%,0.3)]">
+        <p class="w-[70%] mx-auto"><span class="font-semibold">Try it free 7 days</span> then $20/mo. thereafter</p>
+      </div>
+      <div class="bg-white p-6 rounded-lg shadow-[0_8px_0_hsla(249,10%,26%,0.3)] lg:p-8">
+        <form class="flex flex-col gap-4 mb-4">
+          <div class="flex flex-col gap-2">
+            <div class="relative">
+              <input type="text" name="firstName" id="firstName" placeholder="First Name" class="border w-full focus:border-blue caret-blue font-[500] py-4 pl-5 rounded-md border-dark-blue/30 outline-none border placeholder:font-semibold">
+              <img src="images/icon-error.svg" alt="icon-error" class="hidden absolute top-1/2 -translate-y-1/2 right-3 iconErr-firstName">
+            </div>
+            <p class="ml-5 text-red text-[14px] hidden lg:self-end Err-firstName"></p>
+          </div>
+          
+          <div class="flex flex-col gap-2">
+            <div class="relative">
+              <input type="text" name="lastName" id="lastName" placeholder="Last Name" class="border w-full focus:border-blue caret-blue font-[500] py-4 pl-5 rounded-md border-dark-blue/30 outline-none border placeholder:font-semibold">
+              <img src="images/icon-error.svg" alt="icon-error" class="hidden absolute top-1/2 -translate-y-1/2 right-3 iconErr-lastName">
+            </div>
+            <p class="ml-5 text-red text-[14px] hidden lg:self-end Err-lastName"></p>
+          </div>
+
+          <div class="flex flex-col gap-2">
+            <div class="relative">
+              <input type="email" name="email" id="email" required placeholder="Email Address" class="border w-full focus:border-blue caret-blue font-[500] py-4 pl-5 rounded-md border-dark-blue/30 outline-none border placeholder:font-semibold">
+              <img src="images/icon-error.svg" alt="icon-error" class="hidden absolute top-1/2 -translate-y-1/2 right-3 iconErr-email">
+            </div>
+            <p class="ml-5 text-red text-[14px] hidden lg:self-end Err-email"></p>
+          </div>
+
+          <div class="flex flex-col gap-2">
+            <div class="relative">
+              <input type="password" name="password" id="password" placeholder="Password" class="border w-full focus:border-blue caret-blue font-[500] py-4 pl-5 rounded-md border-dark-blue/30 outline-none border placeholder:font-semibold">
+              <img src="images/icon-error.svg" alt="icon-error" class="hidden absolute top-1/2 -translate-y-1/2 right-3 iconErr-password">
+            </div>
+            <p class="ml-5 text-red text-[14px] hidden lg:self-end Err-password"></p>
+          </div>
+
+          <button type="submit" class="py-4 uppercase tracking-wide bg-green rounded-md text-white font-medium cursor-pointer shadow-[0_4px_0_hsla(154,53.70%,32.20%,0.75)] transition duration-200 transform hover:translate-y-[4px] hover:bg-[hsl(154,78.40%,56.50%)] hover:shadow-[0_0_hsla(154,53.70%,32.20%,0.75)]">Claim your free trial </button>
+        </form>
+        <p class="text-center text-[14px] text-grayish-blue mx-auto font-medium lg:text-[12px]">By clicking the button, you are agreeing to our <a href="#" class="text-red font-semibold">Terms and Services</a></p>
+      </div>
+    </div>
+  </section>
+
+  <script src="/main.js"></script>
+</body>
+</html>
