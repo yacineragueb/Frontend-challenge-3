@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <!-- ====================== Font ====================== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+  <!-- ====================== Tailwind ====================== -->
+  <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+
+  <!-- ====================== Icons ====================== -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+    rel="stylesheet"
+  />
+  
+  <title>Ping coming soon page</title>
+
+  <style type="text/tailwindcss">
+    @theme {
+      --color-blue: hsl(223, 87%, 63%);
+      --color-pale-blue: hsl(223, 100%, 88%);
+      --color-light-red: hsl(354, 100%, 66%);
+      --color-gray: hsl(0, 0%, 59%);
+      --color-very-dark-blue: hsl(209, 33%, 12%);
+    }
+  </style>
+
+</head>
+<body class="font-[Libre_Franklin] flex flex-col min-h-screen justify-between">
+
+  <main class="flex flex-col gap-10">
+    <div class="flex flex-col items-center">
+      <img src="images/logo.svg" alt="logo" class="w-14 lg:w-20 pt-15 pb-10">
+      <h1 class="text-2xl text-gray lg:text-5xl">
+        We are launching <span class="text-very-dark-blue font-bold">soon!</span>
+      </h1>
+      <p class="my-6 text-very-dark-blue text-[1.1rem]">Subscribe and get notified</p>
+      <form class="flex flex-col lg:flex-row w-full px-10 gap-3 md:w-[80%] lg:w-[55%]">
+        <div class="lg:flex-2 flex flex-col gap-2 lg:relative"> 
+          <label class="border py-3 rounded-full border-blue/50">
+            <input type="email" placeholder="Your email address..." class="placeholder:text-pale-blue placeholder:text-[14px] outline-none border-none px-8 w-full">
+          </label>
+          <p class="errMessage hidden lg:absolute lg:top-full mb-4 lg:mt-2 text-light-red text-[13px] self-center lg:left-8 lg:text-[14px]"></p>
+        </div>
+        <button class="rounded-full lg:flex-1 py-3 bg-blue font-[600] text-white shadow-lg shadow-pale-blue transition-colors duration-200 hover:bg-blue/75 cursor-pointer">Notify Me</button>
+      </form>      
+    </div>
+    <div class="mt-6 px-10 max-w-200 mx-auto">
+      <img src="images/illustration-dashboard.png" alt="dashboard" class="mx-auto">
+    </div>
+  </main>
+
+  <footer class="flex flex-col items-center gap-6 py-10 lg:mt-10">
+    <div class="flex gap-4">
+      <a href="#" class="border w-8 h-8 lg:w-10 lg:h-10 lg:text-[1.2rem] rounded-full grid place-items-center text-blue border-pale-blue transition-colors duration-200 hover:bg-blue hover:text-white">
+        <i class="ri-facebook-fill"></i>
+      </a>
+
+      <a href="#" class="border w-8 h-8 lg:w-10 lg:h-10 lg:text-[1.2rem] rounded-full grid place-items-center text-blue border-pale-blue transition-colors duration-200 hover:bg-blue hover:text-white">
+        <i class="ri-twitter-fill"></i>
+      </a>
+
+      <a href="#" class="border w-8 h-8 lg:w-10 lg:h-10 lg:text-[1.2rem] rounded-full grid place-items-center text-blue border-pale-blue transition-colors duration-200 hover:bg-blue hover:text-white">
+        <i class="ri-instagram-line"></i>
+      </a>
+    </div>
+    <p class="text-gray text-[14px]">&copy; Copyright Ping. All rights reserved.</p>
+  </footer>
+
+
+  <script src="main.js"></script>
+</body>
+</html>
