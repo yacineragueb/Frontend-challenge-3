@@ -1,6 +1,5 @@
-// import { useState } from "react";
-
 import { useState } from "react";
+import Success from "./Components/Success";
 
 const listItems = [
   {
@@ -17,51 +16,42 @@ const listItems = [
   },
 ];
 
+const emailPattern = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
+
 export default function App() {
   const [email, setEmail] = useState("");
   const [isClicked, setIsClicked] = useState(false);
-  const [isInvalid, setIsInvalid] = useState(null);
+  const [isInvalid, setIsInvalid] = useState(false);
 
-  const handleClick = (e) => {
-    e.preventDefault();
-    let input = document.getElementById('email');
-    
-    if(input.value.trim() === '') {
+  const handleChange = (e) => {
+    setEmail(e.target.value);
+    if(emailPattern.test(e.target.value)) {
       setIsInvalid(false);
     }
   }
 
+  const handleClick = (e) => {
+    e.preventDefault();
+
+    if (!email.trim() || !emailPattern.test(email)) {
+      setIsInvalid(true);
+    } else {
+      setIsClicked(true);
+    }
+  };
+
   const showListItems = listItems.map((item) => (
     <li key={item.id} className="flex gap-3 items-start">
-      <img src="/public/assets/images/icon-list.svg" alt="icon" />
+      <img src="/assets/images/icon-list.svg" alt="icon" />
       <p className="text-blue-800">{item.content}</p>
     </li>
   ));
   return (
     <>
       {isClicked ? (
-        <div className="bg-white w-full h-screen flex flex-col p-6 justify-between md:w-[500px] md:h-[470px] md:p-12 md:rounded-3xl">
-          <div className="flex-1 flex flex-col justify-center">
-            <img
-              src="/assets/images/icon-success.svg"
-              alt="icon success"
-              className="w-18 mb-8"
-            />
-            <h1 className="text-4xl font-bold text-blue-800 w-2/3 mb-4 md:text-5xl">
-              Thanks for subscribing!
-            </h1>
-            <p className="text-blue-800 mb-6">
-              A confirmation email has been sent to{" "}
-              <span className="font-bold">ash@loremcompany.com</span>. Please
-              open it and click the button inside to confirm your subscription.
-            </p>
-          </div>
-          <button className="py-4 rounded-lg bg-blue-800 text-white font-bold cursor-pointer transition duration-300 hover:bg-linear-to-r hover:from-red-400 from-30% hover:to-orange-400">
-            Dismiss message
-          </button>
-        </div>
+        <Success email={email} setEmail={setEmail} setIsClicked={setIsClicked}/>
       ) : (
-        <section className="bg-white flex flex-col mx-auto lg:w-full lg:flex-row-reverse lg:justify-between lg:items-center lg:p-6 rounded-3xl">
+        <section className="bg-white flex flex-col mx-auto lg:w-full lg:flex-row-reverse lg:justify-between lg:items-center lg:p-6 lg:rounded-3xl">
           <div className="mx-auto lg:mx-0">
             <picture>
               <source
@@ -96,11 +86,23 @@ export default function App() {
                 id="email"
                 placeholder="email@company.com"
                 value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className={`border py-4 pl-6 rounded-lg ${isInvalid ? 'border-red' : 'border-grey'}  mb-6 outline-blue-800 text-blue-800`}
+                onChange={handleChange}
+                className={`border py-4 pl-6 rounded-lg ${
+                  isInvalid ? "border-red bg-red/15 text-red" : "border-grey"
+                } outline-none mb-6 text-blue-800`}
               />
-              <p className={`absolute right-0 text-[.9rem] font-bold text-red ${isInvalid ? null : 'hidden'}`}>Valid email required</p>
-              <button type="submit" onClick={handleClick} className="py-4  rounded-lg bg-blue-800 text-white font-bold mb-4 cursor-pointer transition duration-300 hover:bg-linear-to-r hover:from-red-400 from-30% hover:to-orange-400">
+              <p
+                className={`absolute right-0 text-[.9rem] font-bold text-red ${
+                  isInvalid ? null : "hidden"
+                }`}
+              >
+                Valid email required
+              </p>
+              <button
+                type="submit"
+                onClick={handleClick}
+                className="btn mb-4"
+              >
                 Subscribe to monthly newsletter
               </button>
             </form>
