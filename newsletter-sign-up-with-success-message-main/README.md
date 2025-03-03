@@ -33,8 +33,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Click Here](https://your-solution-url.com)
-- Live Site URL: [Click Here](https://your-live-site-url.com)
+- Solution URL: [Click Here](https://github.com/Yaciine19/Frontend-challenge-3/tree/master/newsletter-sign-up-with-success-message-main)
+- Live Site URL: [Click Here](https://newsletter-sign-up-challenge-3.vercel.app/)
 
 ## My process
 
