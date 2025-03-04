@@ -1,6 +1,6 @@
 export default function Hero() {
   return (
-    <section className="flex items-center justify-center min-h-screen mb-20 border">
+    <section className="flex items-center justify-center min-h-screen mb-10 border">
       <picture>
         <source
           srcSet="/images/bg-header-desktop.png"

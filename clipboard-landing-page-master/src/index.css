@@ -26,6 +26,20 @@
     .btn {
         @apply rounded-full py-3 md:px-10 text-center text-white font-bold
     }
+
+    .description {
+        @apply text-grayish-blue text-center text-[16px] lg:w-[43%]
+    }
+}
+
+@layer base {
+    h2 {
+        @apply text-2xl font-bold text-dark-grayish-blue text-center mb-4 lg:text-3xl
+    }
+
+    h3 {
+        @apply text-xl font-bold text-dark-grayish-blue mb-2
+    }
 }
 
 body {
