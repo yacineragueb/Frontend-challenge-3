@@ -21,12 +21,12 @@ const ListItems = [
 export default function Snippets() {
   const showListItems = ListItems.map((item) => (
     <li key={item.id}>
-      <h3>{item.title}</h3>
+      <h3 className="mb-2">{item.title}</h3>
       <p className="text-[16px] text-grayish-blue lg:w-4/7">{item.content}</p>
     </li>
   ));
   return (
-    <section className="min-h-screen mb-20 lg:pt-10 border">
+    <section className="min-h-screen mb-20 lg:pt-10">
       <div className="flex flex-col items-center">
         <h2>Keep track of your snippets</h2>
         <p className="description mb-14">
@@ -37,7 +37,7 @@ export default function Snippets() {
 
         <div className="flex flex-col gap-12 lg:gap-25 lg:flex-row lg:items-center">
           <div>
-            <img src="/public/images/image-computer.png" alt="computer" />
+            <img src="/images/image-computer.png" alt="computer" />
           </div>
           <div className="text-center lg:text-left">
             <ul className="space-y-8 lg:space-y-12">

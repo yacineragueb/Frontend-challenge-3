@@ -12,9 +12,7 @@
 
 :root {
     --color-strong-cyan: hsl(171, 66%, 44%);
-    /* --color-strong-cyan: hsl(171, 64%, 33%); */
     --color-light-blue: hsl(233, 100%, 69%);
-    /* --color-light-blue: hsl(233, 72%, 56%); */
 
     --color-dark-grayish-blue: hsl(210, 10%, 33%);
     --color-grayish-blue: hsl(201, 11%, 66%);
@@ -24,7 +22,7 @@
 
 @layer components {
     .btn {
-        @apply rounded-full py-3 md:px-10 text-center text-white font-bold
+        @apply rounded-full py-3 md:px-10 text-center text-white font-bold transition-colors duration-200
     }
 
     .description {
@@ -38,7 +36,7 @@
     }
 
     h3 {
-        @apply text-xl font-bold text-dark-grayish-blue mb-2
+        @apply text-xl font-bold text-dark-grayish-blue
     }
 }
 

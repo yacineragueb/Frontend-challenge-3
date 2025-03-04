@@ -1,6 +1,6 @@
 export default function Hero() {
   return (
-    <section className="flex items-center justify-center min-h-screen mb-10 border">
+    <section className="flex items-center justify-center min-h-screen mb-10">
       <picture>
         <source
           srcSet="/images/bg-header-desktop.png"
@@ -24,13 +24,13 @@ export default function Hero() {
         <div className="flex flex-col gap-7 w-full md:flex-row md:justify-center">
           <a
             href="#"
-            className="btn bg-strong-cyan shadow-[0_4px_0_hsl(171,90%,33%),0_8px_20px_hsla(171,66%,44%,0.3)]"
+            className="btn bg-strong-cyan shadow-[0_3px_0_hsl(171,85%,37%),0_8px_20px_hsla(171,66%,44%,0.3)] hover:bg-[hsl(171,75%,47%)]"
           >
             Download for iOS
           </a>
           <a
             href="#"
-            className="btn bg-light-blue shadow-[0_4px_0_hsl(233,72%,56%)]"
+            className="btn bg-light-blue shadow-[0_3px_0_hsl(233,72%,56%)] hover:bg-[hsl(233,100%,73%)]"
           >
             Download for Mac
           </a>
