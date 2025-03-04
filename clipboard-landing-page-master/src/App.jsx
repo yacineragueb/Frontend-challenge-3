@@ -1,7 +1,10 @@
+import Hero from "./Components/Hero";
 
 
 export default function App() {
   return (
-    <div>App</div>
+    <main className="px-8 relative">
+      <Hero />
+    </main>
   )
 }
