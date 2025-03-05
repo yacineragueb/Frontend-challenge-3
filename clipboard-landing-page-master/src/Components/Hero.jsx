@@ -1,6 +1,6 @@
 export default function Hero() {
   return (
-    <section className="flex items-center justify-center min-h-screen mb-10">
+    <section className="flex items-center justify-center py-25 md:pt-45 mb-10">
       <picture>
         <source
           srcSet="/images/bg-header-desktop.png"

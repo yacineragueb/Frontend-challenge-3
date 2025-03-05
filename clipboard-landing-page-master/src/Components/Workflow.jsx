@@ -35,7 +35,7 @@ export default function Workflow() {
     </div>
   ));
   return (
-    <section className="min-h-screen lg:pt-10 mb">
+    <section className="lg:pt-10 mb">
       <div className="flex flex-col items-center">
         <h2>Supercharge your workflow</h2>
         <p className="description mb-20">

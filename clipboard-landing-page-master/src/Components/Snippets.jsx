@@ -26,7 +26,7 @@ export default function Snippets() {
     </li>
   ));
   return (
-    <section className="min-h-screen mb-20 lg:pt-10">
+    <section className="mb-20 lg:pt-10">
       <div className="flex flex-col items-center">
         <h2>Keep track of your snippets</h2>
         <p className="description mb-14">
