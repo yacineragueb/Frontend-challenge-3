@@ -1,32 +1,14 @@
-import React, { useState } from "react";
+import { useEffect, useState } from "react";
 import Input from "./Components/Input";
-
-function validateInputs(obj, setErrors) {
-  let newErrors = {};
-  let date = new Date();
-
-  if (!obj.day) newErrors.day = "This field is required";
-  if (!obj.month) newErrors.month = "This field is required";
-  if (!obj.year) newErrors.year = "This field is required";
-
-  if (obj.day && (obj.day < 1 || obj.day > 31))
-    newErrors.day = "Must be a valid day";
-  if (obj.month && (obj.month < 1 || obj.month > 12))
-    newErrors.month = "Must be a valid month";
-  if (obj.year && obj.year > date.getFullYear())
-    newErrors.year = "Must be in the past";
-
-  if (Object.keys(newErrors).length > 0) {
-    setErrors((prevErrors) => ({ ...prevErrors, ...newErrors }));
-    return;
-  }
-
-  return true;
-}
+import validateInputs from "./utils/validateInputs";
 
 export default function App() {
   const [userDate, setUserDate] = useState({ day: "", month: "", year: "" });
   const [errors, setErrors] = useState({ day: "", month: "", year: "" });
+  const [years, setYears] = useState("--");
+  const [months, setMonths] = useState("--");
+  const [days, setDays] = useState("--");
+  const [isCounting, setIsCounting] = useState(false);
 
   const handleOnChange = (name, value) => {
     if (isNaN(value)) {
@@ -35,16 +17,88 @@ export default function App() {
       setErrors((prev) => ({ ...prev, [name]: "" }));
     }
     setUserDate((prev) => ({ ...prev, [name]: value }));
+
+    setIsCounting(false);
   };
 
   const handleClick = () => {
     let isValid = validateInputs(userDate, setErrors);
 
     if (!isValid) return;
+
+    setTimeout(() => {
+      const currentDate = new Date();
+
+      const currentYear = currentDate.getFullYear();
+      const currentMonth = currentDate.getMonth() + 1;
+      const currentDay = currentDate.getDate();
+
+      let birthDay = parseInt(userDate.day);
+      let birthMonth = parseInt(userDate.month);
+      let birthYear = parseInt(userDate.year);
+
+      if (isNaN(birthYear) || isNaN(birthMonth) || isNaN(birthDay)) {
+        return;
+      }
+
+      let yearsOfAge = currentYear - birthYear;
+      let monthsOfAge = currentMonth - birthMonth;
+      let daysOfAge = currentDay - birthDay;
+
+      if (monthsOfAge < 0) {
+        yearsOfAge--;
+        monthsOfAge += 12;
+      }
+
+      if (daysOfAge < 0) {
+        monthsOfAge--;
+
+        let previousMonth = currentMonth - 1;
+        if (previousMonth === 0) previousMonth = 12;
+        const daysInPreviousMonth = new Date(
+          currentYear,
+          previousMonth,
+          0
+        ).getDate();
+        daysOfAge += daysInPreviousMonth;
+      }
+
+      setYears(yearsOfAge);
+      setMonths(monthsOfAge);
+      setDays(daysOfAge);
+      setIsCounting(true);
+    }, 300);
+  };
+
+  const Counter = ({ value, isCounting }) => {
+    const [count, setCount] = useState("--");
+
+    useEffect(() => {
+      if (!isCounting) {
+        setCount("--");
+        return;
+      }
+
+      let start = 0;
+      const duration = 700;
+      const stepTime = Math.max(duration / value, 20);
+
+      setCount(0);
+
+      const timer = setInterval(() => {
+        start += 1;
+        setCount(start);
+        if (start >= value) clearInterval(timer);
+      }, stepTime);
+
+      return () => clearInterval(timer);
+    }, [value, isCounting]);
+
+    return <span className="text-purple">{count}</span>;
   };
 
   return (
-    <section className=" px-6 py-8 md:p-10 overflow-hidden bg-white mt-20 md:mt-0 w-[90%] mx-auto rounded-t-3xl rounded-bl-3xl rounded-br-[5rem] md:rounded-br-[10rem] md:w-170">
+    <section className=" px-6 py-8 md:p-14 overflow-hidden bg-white mt-20 md:mt-0 w-[90%] mx-auto rounded-t-3xl rounded-bl-3xl rounded-br-[5rem] md:rounded-br-[10rem] md:w-200">
       <div className="flex flex-col">
         <div className="flex space-x-4 md:w-[80%]">
           <Input
@@ -86,17 +140,17 @@ export default function App() {
           </div>
         </div>
 
-        <div className="flex flex-col mt-4 md:mt-0">
-          <div className="flex gap-2 text-5xl md:text-7xl font-extraBold-italic">
-            <span className="text-purple">--</span>
+        <div className="flex flex-col mt-4 md:mt-0 space-y-3">
+          <div className="flex gap-2 text-5xl md:text-8xl font-extraBold-italic">
+            <Counter value={years} isCounting={isCounting} />
             <span>years</span>
           </div>
-          <div className="flex gap-2 text-5xl md:text-7xl font-extraBold-italic">
-            <span className="text-purple">--</span>
+          <div className="flex gap-2 text-5xl md:text-8xl font-extraBold-italic">
+            <Counter value={months} isCounting={isCounting} />
             <span>months</span>
           </div>
-          <div className="flex gap-2 text-5xl md:text-7xl font-extraBold-italic">
-            <span className="text-purple">--</span>
+          <div className="flex gap-2 text-5xl md:text-8xl font-extraBold-italic">
+            <Counter value={days} isCounting={isCounting} />
             <span>days</span>
           </div>
         </div>
