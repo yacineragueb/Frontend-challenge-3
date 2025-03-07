@@ -63,6 +63,8 @@ export default function App() {
         daysOfAge += daysInPreviousMonth;
       }
 
+      console.log("Final values:", { yearsOfAge, monthsOfAge, daysOfAge });
+
       setYears(yearsOfAge);
       setMonths(monthsOfAge);
       setDays(daysOfAge);
@@ -86,9 +88,9 @@ export default function App() {
       setCount(0);
 
       const timer = setInterval(() => {
-        start += 1;
         setCount(start);
         if (start >= value) clearInterval(timer);
+        start += 1;
       }, stepTime);
 
       return () => clearInterval(timer);
