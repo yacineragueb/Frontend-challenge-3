@@ -22,6 +22,7 @@ export default function App() {
   };
 
   const handleClick = () => {
+
     let isValid = validateInputs(userDate, setErrors);
 
     if (!isValid) return;
@@ -36,10 +37,6 @@ export default function App() {
       let birthDay = parseInt(userDate.day);
       let birthMonth = parseInt(userDate.month);
       let birthYear = parseInt(userDate.year);
-
-      if (isNaN(birthYear) || isNaN(birthMonth) || isNaN(birthDay)) {
-        return;
-      }
 
       let yearsOfAge = currentYear - birthYear;
       let monthsOfAge = currentMonth - birthMonth;
@@ -62,8 +59,6 @@ export default function App() {
         ).getDate();
         daysOfAge += daysInPreviousMonth;
       }
-
-      console.log("Final values:", { yearsOfAge, monthsOfAge, daysOfAge });
 
       setYears(yearsOfAge);
       setMonths(monthsOfAge);
