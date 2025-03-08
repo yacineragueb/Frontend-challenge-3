@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  --color-very-dark-blue: hsl(243, 87%, 12%);
+  --color-desaturated-blue: hsl(238, 22%, 44%);
+
+  --color-bright-blue: hsl(224, 93%, 58%);
+  --color-moderate-cyan: hsl(170, 45%, 43%);
+
+  --color-light-grayish-blue: hsl(240, 75%, 98%);
+  --color-light-gray: hsl(0, 0%, 75%);
+
+  --font-open: "Open Sans", sans-serif;
+  --font-raleway: "Raleway", sans-serif;
+}
+
+:root {
+  --color-very-dark-blue: hsl(243, 87%, 12%);
+  --color-desaturated-blue: hsl(238, 22%, 44%);
+
+  --color-bright-blue: hsl(224, 93%, 58%);
+  --color-moderate-cyan: hsl(170, 45%, 43%);
+
+  --color-light-grayish-blue: hsl(240, 75%, 98%);
+  --color-light-gray: hsl(0, 0%, 75%);
+
+  --font-open: "Open Sans", sans-serif;
+  --font-raleway: "Raleway", sans-serif;
+}
