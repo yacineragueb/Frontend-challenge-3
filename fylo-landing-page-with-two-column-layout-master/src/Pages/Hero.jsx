@@ -1,24 +1,24 @@
 export default function Hero() {
   return (
-    <section className="mt-[10vh] border px-5 pt-20 pb-10">
-      <div>
-        <div>
+    <section className="mt-[10vh] px-5 md:px-16 pt-20 pb-10">
+      <div className="flex flex-col lg:flex-row-reverse lg:items-center">
+        <div className="lg:flex-1">
           <img src="/images/illustration-1.svg" alt="illustration" />
         </div>
-        <div>
-          <h1 className="text-center text-2xl text-very-dark-blue font-bold font-open mb-4">All your files in one secure location, accessible anywhere.</h1>
-          <p className="text-center text-very-dark-blue mb-8">
+        <div className="lg:flex-1">
+          <h1 className="text-center lg:text-left text-2xl lg:text-4xl lg:leading-14 text-very-dark-blue font-bold font-open mb-4 lg:w-[90%]">All your files in one secure location, accessible anywhere.</h1>
+          <p className="text-center lg:text-left text-very-dark-blue mb-8 lg:text-[1.2rem] lg:leading-7 lg:w-[85%]">
             Fylo stores your most important files in one secure location. Access
             them wherever you need, share and collaborate with friends, family,
             and co-workers.
           </p>
 
-          <form className="flex flex-col gap-5">
-            <div className="flex flex-col gap-2">
+          <form className="flex flex-col gap-y-5 lg:gap-x-4 lg:flex-row lg:w-[90%]">
+            <div className="flex flex-col gap-2 lg:flex-2/3">
               <input type="email" placeholder="Enter your email..." className="border border-very-dark-blue w-full rounded-sm py-3 px-6 outline-none placeholder:font-raleway placeholder:text-light-gray font-open" />
               {/* <p className="text-pink-600 text-sm">Check your email.</p> */}
             </div>
-            <button type="submit" className="bg-bright-blue text-white font-bold font-raleway py-3 rounded-sm shadow-lg cursor-pointer">Get Started</button>
+            <button type="submit" className="lg:flex-1/2 bg-bright-blue text-white font-bold font-raleway py-3 rounded-sm shadow-lg cursor-pointer">Get Started</button>
           </form>
         </div>
       </div>
