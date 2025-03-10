@@ -24,7 +24,7 @@ const showNav = NavItems.map((item) => (
 
 export default function Header() {
   return (
-    <header className="border h-[10vh] bg-white flex justify-between items-center w-full px-5 md:px-16 fixed top-0">
+    <header className="border h-[10vh] bg-white flex justify-between items-center w-full px-5 md:px-16 fixed top-0 z-50">
       <img src="/images/logo.svg" alt="logo" className="w-25 lg:w-30" />
       <nav>
         <ul className="flex gap-5 sm:gap-10">{showNav}</ul>

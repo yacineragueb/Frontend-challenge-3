@@ -7,7 +7,7 @@ export default function App() {
   return (
     <>
       <Header />
-      <main className="flex flex-col gap-16">
+      <main>
         <Hero />
         <Reviews />
       </main>
