@@ -13,7 +13,7 @@ export default function App() {
         <Reviews />
         <Access />
       </main>
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 }

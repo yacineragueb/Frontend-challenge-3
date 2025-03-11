@@ -16,13 +16,13 @@ export default function Access() {
           <input
             type="email"
             placeholder="email@example.com"
-            className=" bg-white border-very-dark-blue shadow-lg w-full md:w-[90%] rounded-sm py-3 px-6 outline-none placeholder:font-raleway placeholder:text-light-gray font-open"
+            className=" bg-white border-very-dark-blue text-very-dark-blue shadow-lg w-full md:w-[90%] rounded-sm py-3 px-6 outline-none placeholder:font-raleway placeholder:text-light-gray font-open"
           />
-          <p className="text-white text-sm">Please Check your email.</p>
+          {/* <p className="text-white text-sm">Please Check your email.</p> */}
         </div>
         <button
           type="submit"
-          className="lg:flex-1/2 bg-bright-blue text-white font-bold font-raleway py-3 rounded-sm shadow-lg cursor-pointer md:self-start md:w-[35%]"
+          className="lg:flex-1/2 bg-bright-blue text-white font-bold font-raleway py-3 rounded-sm shadow-lg cursor-pointer md:self-start md:w-[35%] transition-colors duration-200 hover:bg-[hsl(224,92%,65%)]"
         >
           Get Started For Free
         </button>

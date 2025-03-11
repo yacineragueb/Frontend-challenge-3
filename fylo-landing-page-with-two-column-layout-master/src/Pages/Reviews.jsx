@@ -1,3 +1,5 @@
+import { IoArrowForwardCircle } from "react-icons/io5";
+
 export default function Reviews() {
   return (
     <section className="px-5 md:px-16 relative border bg-[hsl(240,75%,98.43%)] pt-10 pb-25">
@@ -33,10 +35,10 @@ export default function Reviews() {
 
           <a
             href="#"
-            className="text-moderate-cyan flex gap-2 border-b-2 pb-2 mb-12 transition-colors duration-200 hover:text-[hsl(170,54%,50%)]"
+            className="text-moderate-cyan flex items-center gap-2 border-b-2 pb-2 mb-12 transition-colors duration-200 hover:text-[hsl(170,54%,50%)]"
           >
             See how Fylo works{" "}
-            <img src="/images/icon-arrow.svg" alt="arrow" className="w-6" />
+            <IoArrowForwardCircle className="mt-1"/>
           </a>
 
           <div className="flex flex-col bg-white rounded-md shadow-[0_0_8px_hsla(238,22%,44%,0.1)] p-8 lg:w-[65%]">

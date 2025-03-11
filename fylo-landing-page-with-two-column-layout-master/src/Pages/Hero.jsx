@@ -18,7 +18,7 @@ export default function Hero() {
               <input type="email" placeholder="Enter your email..." className="border border-very-dark-blue w-full rounded-sm py-3 px-6 outline-none placeholder:font-raleway placeholder:text-light-gray font-open" />
               {/* <p className="text-pink-600 text-sm">Check your email.</p> */}
             </div>
-            <button type="submit" className="lg:flex-1/2 bg-bright-blue text-white font-bold font-raleway py-3 rounded-sm shadow-lg cursor-pointer">Get Started</button>
+            <button type="submit" className="lg:flex-1/2 bg-bright-blue text-white font-bold font-raleway py-3 rounded-sm shadow-lg cursor-pointer transition-colors duration-200 hover:bg-[hsl(224,92%,65%)]">Get Started</button>
           </form>
         </div>
       </div>
