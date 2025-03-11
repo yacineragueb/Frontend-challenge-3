@@ -39,7 +39,6 @@ export default function Reviews() {
             <img src="/images/icon-arrow.svg" alt="arrow" className="w-6" />
           </a>
 
-          {/* Card */}
           <div className="flex flex-col bg-white rounded-md shadow-[0_0_8px_hsla(238,22%,44%,0.1)] p-8 lg:w-[65%]">
             <img
               src="/images/icon-quotes.svg"
