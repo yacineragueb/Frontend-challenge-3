@@ -1,6 +1,28 @@
+import { useRef, useState } from "react";
+
+const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
 export default function Access() {
+  const [email, setEmail] = useState("");
+  const [error, setError] = useState(false);
+  const formRef = useRef(null);
+
+  const handleChange = (e) => {
+    setEmail(e.target.value);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (!email || !emailPattern.test(email.trim())) {
+      setError(true);
+      return;
+    }
+    setError(false);
+    formRef.current.submit();
+  };
   return (
-    <section className="px-8 md:px-16 py-20 bg-desaturated-blue text-white flex flex-col md:flex-row items-center md:gap-45">
+    <section className="px-8 md:px-16 py-20 bg-desaturated-blue text-white flex flex-col md:flex-row items-center md:gap-10 lg:gap-45">
       <div className="flex flex-col items-center text-center md:text-left md:items-start ">
         <h1 className="text-xl font-raleway font-bold mb-4 md:text-3xl">
           Get early access today
@@ -11,18 +33,28 @@ export default function Access() {
           be happy to help you.
         </p>
       </div>
-      <form className="flex flex-col gap-y-3 lg:gap-x-4 lg:w-[85%] w-full">
+      <form
+        ref={formRef}
+        onSubmit={handleSubmit}
+        className="flex flex-col gap-y-3 lg:gap-x-4 lg:w-[85%] w-full"
+      >
         <div className="flex flex-col gap-2 lg:flex-2/3">
           <input
+            value={email}
+            onChange={handleChange}
             type="email"
             placeholder="email@example.com"
-            className=" bg-white border-very-dark-blue text-very-dark-blue shadow-lg w-full md:w-[90%] rounded-sm py-3 px-6 outline-none placeholder:font-raleway placeholder:text-light-gray font-open"
+            className={`bg-white  ${
+              error ? "border border-red-500" : "border-very-dark-blue"
+            } text-very-dark-blue shadow-lg w-full md:w-[90%] rounded-sm py-3 px-6 outline-none placeholder:font-raleway placeholder:text-light-gray font-open`}
           />
-          {/* <p className="text-white text-sm">Please Check your email.</p> */}
+          {error && (
+            <p className="text-white text-sm">Please Check your email.</p>
+          )}
         </div>
         <button
           type="submit"
-          className="lg:flex-1/2 bg-bright-blue text-white font-bold font-raleway py-3 rounded-sm shadow-lg cursor-pointer md:self-start md:w-[35%] transition-colors duration-200 hover:bg-[hsl(224,92%,65%)]"
+          className="btn md:self-start md:w-[90%] lg:w-[40%]"
         >
           Get Started For Free
         </button>

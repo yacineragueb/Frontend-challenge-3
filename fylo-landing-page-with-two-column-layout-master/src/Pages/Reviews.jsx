@@ -2,7 +2,7 @@ import { IoArrowForwardCircle } from "react-icons/io5";
 
 export default function Reviews() {
   return (
-    <section className="px-5 md:px-16 relative border bg-[hsl(240,75%,98.43%)] pt-10 pb-25">
+    <section className="px-5 md:px-16 relative bg-[hsl(240,75%,98.43%)] pt-10 pb-25">
       <picture className="absolute inset-x-0 bottom-full w-full">
         <source
           srcSet="/images/bg-curve-desktop.svg"
@@ -41,13 +41,13 @@ export default function Reviews() {
             <IoArrowForwardCircle className="mt-1"/>
           </a>
 
-          <div className="flex flex-col bg-white rounded-md shadow-[0_0_8px_hsla(238,22%,44%,0.1)] p-8 lg:w-[65%]">
+          <div className="flex flex-col md:items-center lg:items-start bg-white rounded-md shadow-[0_0_8px_hsla(238,22%,44%,0.1)] p-8 lg:w-[65%]">
             <img
               src="/images/icon-quotes.svg"
               alt="quotes"
               className="self-start mb-3"
             />
-            <p className="text-very-dark-blue mb-4 text-[.875rem] leading-6">
+            <p className="text-very-dark-blue mb-4 text-[.875rem] leading-6 md:text-center lg:text-left">
               Fylo has improved our team productivity by an order of magnitude.
               Since making the switch our team has become a well-oiled
               collaboration machine.

@@ -16,16 +16,8 @@
   --font-raleway: "Raleway", sans-serif;
 }
 
-:root {
-  --color-very-dark-blue: hsl(243, 87%, 12%);
-  --color-desaturated-blue: hsl(238, 22%, 44%);
-
-  --color-bright-blue: hsl(224, 93%, 58%);
-  --color-moderate-cyan: hsl(170, 45%, 43%);
-
-  --color-light-grayish-blue: hsl(240, 75%, 98%);
-  --color-light-gray: hsl(0, 0%, 75%);
-
-  --font-open: "Open Sans", sans-serif;
-  --font-raleway: "Raleway", sans-serif;
+@layer components {
+  .btn {
+    @apply lg:flex-1/2 bg-bright-blue text-white font-bold font-raleway py-3 rounded-sm shadow-lg cursor-pointer transition-colors duration-200 hover:bg-[hsl(224,92%,65%)]
+  }
 }
