@@ -4,26 +4,14 @@ import axios from "axios";
 import { useEffect } from "react";
 
 export default function App() {
-  const [quote, setQuote] = useState(null);
+  const [advice, setAdvice] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
-  const [quoteNumber, setQuoteNumber] = useState(
-    localStorage.getItem("numberOfQuote")
-      ? Number(localStorage.getItem("numberOfQuote"))
-      : 1
-  );
-
-  console.log(import.meta.env.VITE_API_URL);
 
   const fetchQuote = async () => {
     setIsLoading(true);
     try {
-      const res = await axios.get("/api/quote");
-      setQuote(res.data[0]);
-      setQuoteNumber((prev) => {
-        const newNumber = prev + 1;
-        localStorage.setItem("numberOfQuote", newNumber);
-        return newNumber;
-      });
+      const res = await axios.get(import.meta.env.VITE_API_URL);
+      setAdvice(res.data.slip);
     } catch (error) {
       console.error(error);
     } finally {
@@ -42,10 +30,10 @@ export default function App() {
       ) : (
         <section className="w-[90%] max-w-130 mx-auto flex flex-col items-center shadow-2xl bg-Dark-grayish-blue px-6 pt-10 pb-15 rounded-xl mt-26 md:mt-0 relative">
           <h5 className="text-Neon-green tracking-[4px] text-[10px] md:text-sm font-bold">
-            ADVICE #{quoteNumber}
+            ADVICE #{advice.id}
           </h5>
           <q className="text-[1.75rem] text-light-cyan font-bold text-center my-6">
-            {quote ? quote.content : "No quote available"}
+            {advice ? advice.advice : "No quote available"}
           </q>
           <picture>
             <source
