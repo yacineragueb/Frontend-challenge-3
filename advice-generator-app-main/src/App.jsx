@@ -17,7 +17,7 @@ export default function App() {
   const fetchQuote = async () => {
     setIsLoading(true);
     try {
-      const res = await axios.get(import.meta.env.VITE_API_URL);
+      const res = await axios.get("/api/quote");
       setQuote(res.data[0]);
       setQuoteNumber((prev) => {
         const newNumber = prev + 1;
