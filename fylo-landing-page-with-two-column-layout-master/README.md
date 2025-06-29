@@ -27,7 +27,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Click Here](https://github.com/Yaciine19/Frontend-challenge-3/tree/master/fylo-landing-page-with-two-column-layout-master)
+- Solution URL: [Click Here](https://github.com/yacineragueb/Frontend-challenge-3/tree/master/fylo-landing-page-with-two-column-layout-master)
 - Live Site URL: [Click Here](https://flyo-landing-page-challenge-3.vercel.app/)
 
 ## My process
@@ -45,5 +45,5 @@ Users should be able to:
 ## Author
 
 - Website - [Yacine Ragueb](https://yacineragueb.vercel.app/)
-- Frontend Mentor - [@Yaciine19](https://www.frontendmentor.io/profile/Yaciine19)
-- LinkedIn - [@yacine](https://www.linkedin.com/in/yacine-ragueb-8033a9302/)
+- Frontend Mentor - [@yacineragueb](https://www.frontendmentor.io/profile/yacineragueb)
+- LinkedIn - [@yacineragueb](https://www.linkedin.com/in/yacineragueb/)
