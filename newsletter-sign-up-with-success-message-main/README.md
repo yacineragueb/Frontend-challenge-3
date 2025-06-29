@@ -52,5 +52,5 @@ Users should be able to:
 ## Author
 
 - Website - [Yacine Ragueb](https://yacineragueb.vercel.app/)
-- Frontend Mentor - [@Yaciine19](https://www.frontendmentor.io/profile/Yaciine19)
-- LinkedIn - [@yacineRagueb](https://www.linkedin.com/in/yacine-ragueb-8033a9302/)
+- Frontend Mentor - [@yacineragueb](https://www.frontendmentor.io/profile/yacineragueb)
+- LinkedIn - [@yacineRagueb](https://www.linkedin.com/in/yacineragueb/)
